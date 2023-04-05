@@ -13,3 +13,6 @@ class Book(models.Model):
     cover = models.CharField(max_length=2, choices=Cover.choices)
     inventory = models.IntegerField(validators=[MinValueValidator(0)])
     daily_fee = models.DecimalField(max_digits=4, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.author}: {self.title}"
